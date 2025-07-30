@@ -48,9 +48,7 @@
 <div class="container content">
   <h2 class="title is-3">Abstract</h2>
   <p>
-  We propose <strong>Mutual-Information Unlearning (MUITR)</strong>, an information-theoretic
-  regularizer that forces an LLM to <em>forget</em> a target corpus while preserving utility
-  on the retained data. ⋯
+  As AI models are trained on ever-expanding datasets, the ability to remove the influence of specific data from trained models has become essential for privacy protection and regulatory compliance, such as the ``right to be forgotten." Unlearning addresses this by selectively removing parametric knowledge without retraining from scratch, which is critical for resource-intensive models like Large Language Models (LLMs). Existing unlearning methods often degrade model performance by removing more information than necessary when ``forgetting." We introduce \emph{Forgetting-MarI}, an unlearning framework for LLMs that provably removes only the additional (marginal) information contributed by the data to be unlearned, leaving intact all information supported by the data to be retained. By targeting marginal information rather than all information tied to the data to be forgotten, our method achieves robust unlearning while preserving general model capabilities. Extensive experiments confirm that our approach outperforms current state-of-the-art unlearning methods, delivering reliable forgetting and better model performance across diverse benchmarks. This advancement represents an important step toward making AI systems more controllable and compliant with privacy and copyright regulations without compromising their effectiveness.
   </p>
 </div>
 </section>
@@ -108,16 +106,16 @@
 <section class="section" id="team">
 <div class="container content has-text-centered">
   <h2 class="title is-3">Authors</h2>
-  <p>First Author<sup>1</sup>, Second Author<sup>1</sup>, Third Author<sup>2</sup></p>
-  <p><sup>1</sup>University A   <sup>2</sup>Institute B</p>
+  <p>Shizhou Xu<sup>1</sup>, Yuan Ni, Stefan Broecker<sup>1</sup>, Thomas Strohmer<sup>2</sup></p>
+  <p><sup>1</sup>University of California Davis   <sup>2</sup>SLAC Stanford</p>
   <hr>
   <h3 class="title is-5">BibTeX</h3>
   <pre>
 @inproceedings{author2024forgettingmari,
   title     = {Forgetting-MarI: Machine Unlearning for LLMs via Information-Theoretic Regularization},
   author    = {…},
-  booktitle = {NeurIPS},
-  year      = {2024}
+  booktitle = {…},
+  year      = {2025}
 }
   </pre>
 </div>
