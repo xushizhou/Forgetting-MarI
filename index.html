@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Forgetting-MarI: Mutual-Information Unlearning for LLMs</title>
+
+  <!-- Minimal CSS stack -->
+  <link  href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" rel="stylesheet">
+  <link  href="css/style.css" rel="stylesheet">
+
+  <!-- Smooth-scroll & navbar highlight -->
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+
+<!-- ───────────────── Header / Hero ───────────────────────────── -->
+<section class="hero is-medium is-primary is-bold" id="home">
+  <div id="particles-js"></div>     <!-- subtle animated dots, optional -->
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">Forgetting-MarI</h1>
+      <h2 class="subtitle">Machine Unlearning for LLMs via Information-Theoretic Regularization</h2>
+      <p class="buttons">
+        <a class="button is-light" href="papers/forgetting_mari.pdf" target="_blank">Paper (PDF)</a>
+        <a class="button is-link"  href="https://github.com/&lt;user&gt;/forgetting-mari">Code ⇢</a>
+        <a class="button is-info"  href="#demo">Live Demo</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── Navbar (sticks on scroll) ──────────────── -->
+<nav class="navbar is-fixed-top is-white" id="navbar">
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="#home">Home</a>
+      <a class="navbar-item" href="#abstract">Abstract</a>
+      <a class="navbar-item" href="#method">Method</a>
+      <a class="navbar-item" href="#results">Results</a>
+      <a class="navbar-item" href="#demo">Demo</a>
+      <a class="navbar-item" href="#team">Team</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ───────────────── Abstract ──────────────────────────────── -->
+<section class="section" id="abstract">
+<div class="container content">
+  <h2 class="title is-3">Abstract</h2>
+  <p>
+  We propose <strong>Mutual-Information Unlearning (MUITR)</strong>, an information-theoretic
+  regularizer that forces an LLM to <em>forget</em> a target corpus while preserving utility
+  on the retained data. ⋯
+  </p>
+</div>
+</section>
+
+<!-- ───────────────── Method (diagram + math) ────────────────── -->
+<section class="section" id="method">
+<div class="container content">
+  <h2 class="title is-3">Method</h2>
+  <figure class="image">
+    <img src="img/pipeline.svg" style="max-width:720px;margin:auto;">
+    <figcaption>Overall pipeline of Forgetting-MarI.</figcaption>
+  </figure>
+  <p>
+  We minimize
+  \\[
+     \mathcal{L} = (1-\gamma)\,
+     \mathrm{KL}\bigl(p_\theta(\cdot\!\mid\!R)\,\|\,p_{\theta_0}(\cdot\!\mid\!R)\bigr)
+     \;+\;
+     \gamma\, I_\theta(X;Z),
+  \\]
+  ⋯
+  </p>
+</div>
+</section>
+
+<!-- ───────────────── Results table / fig ─────────────────────── -->
+<section class="section" id="results">
+<div class="container content">
+  <h2 class="title is-3">Results</h2>
+  <img src="img/results_plot.svg" style="max-width:680px;">
+  <table class="table is-striped is-fullwidth">
+    <thead><tr><th>Metric</th><th>Baseline</th><th>Forgetting-MarI</th></tr></thead>
+    <tbody>
+      <tr><td>Perplexity ↓</td><td>25.3</td><td><strong>25.9</strong></td></tr>
+      <tr><td>ROC-AUC ↑</td><td>0.86</td><td><strong>0.18</strong></td></tr>
+    </tbody>
+  </table>
+</div>
+</section>
+
+<!-- ───────────────── Live Demo embed ─────────────────────────── -->
+<section class="section" id="demo">
+<div class="container">
+  <h2 class="title is-3">Interactive Demo</h2>
+  <iframe
+    src="https://huggingface.co/spaces/&lt;user&gt;/forgetting-mari-demo?__theme=light"
+    style="border:none;width:100%;height:460px">
+  </iframe>
+  <p class="has-text-centered"><a class="button is-small is-link" target="_blank"
+  href="https://huggingface.co/spaces/&lt;user&gt;/forgetting-mari-demo">Open full screen ⇢</a></p>
+</div>
+</section>
+
+<!-- ───────────────── Team / BibTeX / footer ──────────────────── -->
+<section class="section" id="team">
+<div class="container content has-text-centered">
+  <h2 class="title is-3">Authors</h2>
+  <p>First Author<sup>1</sup>, Second Author<sup>1</sup>, Third Author<sup>2</sup></p>
+  <p><sup>1</sup>University A   <sup>2</sup>Institute B</p>
+  <hr>
+  <h3 class="title is-5">BibTeX</h3>
+  <pre>
+@inproceedings{author2024forgettingmari,
+  title     = {Forgetting-MarI: Machine Unlearning for LLMs via Information-Theoretic Regularization},
+  author    = {…},
+  booktitle = {NeurIPS},
+  year      = {2024}
+}
+  </pre>
+</div>
+</section>
+
+<script src="js/particles.min.js"></script>
+</body>
+</html>
